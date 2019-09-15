@@ -64,13 +64,13 @@ class PneumothoraxDataset(Dataset):
                 sample = self.transform(**sample)
                 sample = self.to_tensor(**sample)
                 image = sample['image']
-            image_id = self.test_list[index].replace('.png', '')
+            image_id = self.test_list[index].replace('.jpg', '')
             return image_id, image
         
         elif self.mode == 'train':
             image = cv2.imread(os.path.join(self.train_image_path, self.train_list[index]), 1)
             if self.exist_labels[index] == 0:
-                label = np.zeros((1024, 1024))
+                label = np.zeros((350,525))
             else:
                 label = cv2.imread(os.path.join(self.train_mask_path, self.train_list[index]), 0)           
 
