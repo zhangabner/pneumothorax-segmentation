@@ -1,6 +1,6 @@
 #main
 PIPELINE_NAME: albunet_1024
-DATA_DIRECTORY: '../input/dataset1024'
+DATA_DIRECTORY: '/content/dataset350'
 LOGGER_DIR: 'log'
 
 SEED: 42
@@ -58,7 +58,7 @@ SCHEDULER:
     threshold: 0.0000001
     min_lr: 0.0000001
     
-BATCH_SIZE: 2
+BATCH_SIZE: 16
 GRADIENT_ACCUMULATION_STEPS: 1
 GRADIENT_CLIPPING: 0.1
 EPOCHES: 50
